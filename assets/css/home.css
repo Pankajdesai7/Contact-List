@@ -1,0 +1,124 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color:orange;
+}
+#main{
+    display: flex;
+    
+}
+#list-item{
+    width:280px;
+    height:55px;
+    background-color:orange;
+    color:black;
+    margin-top:10px;
+    border:2px solid black;
+    font-size:18px;
+    margin-left:24px;
+    display: flex;
+    
+}
+#list-item li{
+    list-style: none;
+    
+}
+#list-item:hover{
+    background-color: olive;
+}
+/*#list-item p{
+    display: inline;
+    margin-left:20px;
+}*/
+#flex{
+    display: flex;
+    width: 100%;
+    height: 100%;
+   
+}
+#flex div{
+    /*margin-left:25px;*/
+   /* margin-top: 15px;*/
+    height:100%;
+    line-height:55px;
+    /*border: 1px solid whitesmoke;*/
+}
+#name{
+    width:100px;
+    text-align: center;
+}
+#number{
+    width:130px;
+    text-align: right;
+}
+#delete{
+    width:43px;
+}
+#delete i{
+    margin-top: 16px;
+    margin-left:17px;
+}
+#delete a{
+    color: black;
+}
+#Contact-container{
+    width:30%;
+    margin-left:400px;
+    border:1px solid black;
+    background-color:black;
+}
+#Contact-container h1{
+    margin-left:100px;
+    color:whitesmoke;
+
+}
+#form-container{
+
+    width:500px;
+    height: 400px;
+    border:1px solid black;
+    margin-left: 40px;
+    background-color: black;
+}
+.input-text{
+    width: 100%;
+    height:100px;
+
+}
+.input-text input{
+    margin-left:100px;
+    height:50px;
+    width:300px;
+    border: none;
+    border-bottom:6px solid olive;
+    margin-top: 50px;
+    outline: none;
+    font-size:20px;
+    color: white;
+    background:transparent;
+}
+.btn button{
+    width:300px;
+    margin-left: 100px;
+    height:45px;
+    background: transparent;
+    color:whitesmoke;
+    border:3px solid olive;
+    margin-top: 50px;
+    font-size:20px;
+}
+.btn button:hover{
+    background-color: olive;
+}
+::-webkit-input-placeholder{
+    color: whitesmoke;
+}
+.heading{
+    width:100%;
+    font-size:40px;
+    height: 50px;
+    text-align: center;
+    color: whitesmoke;
+    margin-top: 15px;
+    border-bottom:3px solid olive;
+}
