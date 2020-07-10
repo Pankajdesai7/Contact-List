@@ -4,12 +4,13 @@ const path=require('path');
 const port=8000;
 
 
-/*const db=require('./config/mongoose');*/
+const db=require('./config/mongoose');
+const Contact=require('./models/contact');
 const app=express();
 const contact=[
     {
         name:'Pankaj',
-        number:'9763844654'
+        number:'97637857854'
     },
     {
         name:'Pravin',
@@ -46,27 +47,51 @@ app.get('/practice',function(req,res){
 });
 
 app.get('/',function(req,res){
-    res.render('home',{
-        title:'contact list',
-        contact_list:contact
+
+    Contact.find({},function(err,contacts){
+        if(err)
+        {
+            console.log("error");
+            return;
+        }
+        res.render('home',{
+            title:'contact list',
+            contact_list:contacts
+        });
     });
+    
 });
 app.post('/get-practice',function(req,res){
-    contact.push(req.body);
+
+    Contact.create(req.body,function(err,newContact){
+
+        if(err)
+        {
+            console.log("error occured");
+            return;
+        }
+      return  res.redirect('back');
+    });
+    //contact.push(req.body);
      //contact.push(req.body);
-    return res.redirect('/');
 });
 app.get('/get-contact/',function(req,res){
-     //fetching the number from url
-    let phone=req.query.number;
+     //fetching the unique id for contact from url
+    let id=req.query.id;
 
-    let contactIndex=contact.findIndex(contact => contact.number==phone);
-    if(contactIndex!=-1)
-    {
-        contact.splice(contactIndex,1);
-    }
-     return res.redirect('back');
-})
+    Contact.findByIdAndDelete(id,function(err){
+        if(err)
+        {
+            window.alert("Error Occured");
+            return;
+        }
+        return res.redirect('back');
+    })
+
+
+
+     
+});
 
 
 app.listen(port,function(err){
